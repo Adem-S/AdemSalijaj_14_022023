@@ -1,0 +1,85 @@
+.home {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    width: 18em;
+}
+
+.form input {
+    border: 1px solid black;
+    padding: 0.5em 0.5em;
+    border-radius: 5px;
+    width: 60%;
+    height: 35px;
+}
+
+div.react-date-picker {
+    width: 60%;
+}
+
+div.react-date-picker__wrapper  {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 35px;
+}
+
+div.react-date-picker__inputGroup {
+    padding: 0;
+    padding-left: 0.4em;
+    padding-bottom: 0.2em;
+}
+
+.react-date-picker__inputGroup input {
+    border: 0;
+    height: 55%;
+    max-width: 30%;
+    border-radius: 0;
+}
+
+.react-date-picker__inputGroup input:focus {
+   outline: none;
+}
+
+
+.react-date-picker__inputGroup__input:invalid {
+    background: transparent !important;
+}
+
+
+span.react-date-picker__inputGroup__leadingZero {
+    padding-right: 0.1em;
+    padding-left: 0.5em;
+}
+
+.form-adress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    border: 1px solid black;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 18em;
+}
+
+input.form-submit {
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}

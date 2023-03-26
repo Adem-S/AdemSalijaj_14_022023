@@ -1,0 +1,45 @@
+.mask-modal {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 50%;
+    min-width: 320px;
+    height: auto;
+    background: white;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+.modal__close  {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal__close img {
+    width: 2em;
+    cursor: pointer;
+}
+
+.modal__close p {
+    margin: 0 auto;
+    font-size: 1.2em;
+}
+
+
+.modal__content  {
+    padding-top: 1em;
+}
