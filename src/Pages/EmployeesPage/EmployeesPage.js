@@ -41,7 +41,7 @@ const EmployeesPage = ({ employees }) => {
 
   useEffect(() => {
     setListEmployees(employees);
-    sliceEmployees(employees, pageNumber);
+    sliceEmployees(employees, pageNumber, numberEntries);
   }, [employees]);
 
   //List of keys for the table
@@ -106,7 +106,7 @@ const EmployeesPage = ({ employees }) => {
         return ascending ? 1 : -1;
       }
     });
-    sliceEmployees(listSorted, newPageNumber);
+    sliceEmployees(listSorted, newPageNumber, numberEntries);
   };
 
   /**
@@ -114,7 +114,7 @@ const EmployeesPage = ({ employees }) => {
    */
   const handleChangePage = (index) => {
     setPageNumber(pageNumber + index);
-    sliceEmployees(listFilteredEmployees, pageNumber + index);
+    sliceEmployees(listFilteredEmployees, pageNumber + index, numberEntries);
   };
 
   /**
@@ -127,11 +127,23 @@ const EmployeesPage = ({ employees }) => {
   };
 
   /**
+   *
+   * @param {number} number
+   */
+  const handleChangeNumberEntries = (number) => {
+    setNumberEntries(number);
+    setPageNumber(1);
+    sliceEmployees(listFilteredEmployees, 1, number);
+  };
+
+  /**
    * Get employees by page
    * @param {Array} listSorted
    * @param {number} pageNumber
+   * @param {number} numberEntries
+   *
    */
-  const sliceEmployees = (listSorted, pageNumber) => {
+  const sliceEmployees = (listSorted, pageNumber, numberEntries) => {
     let indexStart = pageNumber === 1 ? 0 : (pageNumber - 1) * numberEntries;
     let indexEnd = pageNumber * numberEntries;
     setListFilteredEmployees(listSorted);
@@ -150,7 +162,7 @@ const EmployeesPage = ({ employees }) => {
             width="70px"
             items={numberEntriesItems}
             value={numberEntries}
-            onChange={setNumberEntries}
+            onChange={(value) => handleChangeNumberEntries(value)}
           />
           <p>entries</p>
         </div>
