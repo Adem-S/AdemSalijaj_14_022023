@@ -90,6 +90,7 @@ const DataTable = ({ data, listKeys, numberEntriesItems }) => {
    */
   const showAllPages = (number) => {
     let pages = [];
+    number = number === 0 ? 1 : number;
     for (let i = 1; i <= number; i++) {
       pages.push(
         <p
@@ -235,7 +236,11 @@ const DataTable = ({ data, listKeys, numberEntriesItems }) => {
           Showing{" "}
           <span>
             {" "}
-            {pageNumber === 1 ? 1 : (pageNumber - 1) * numberEntries}{" "}
+            {pageNumber === 1
+              ? listLength === 0
+                ? 0
+                : 1
+              : (pageNumber - 1) * numberEntries}{" "}
           </span>
           to{" "}
           <span>
