@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Home.css";
 import DatePicker from "react-date-picker";
 import Modal from "../../Components/Modal/Modal";
-import { Dropdown } from "dropdown-op";
-import { stateItems, departmentItems } from "../../Feature/itemsSelect";
+import { Dropdown } from "adem-dropdown";
+import { stateItems, departmentItems } from "../../Utils/HomeDropdownItems";
 import CrossIcon from "../../Assets/cross.svg";
 
 /**
@@ -24,6 +24,11 @@ const Home = ({ addEmployee }) => {
   const [zipCode, setZipCode] = useState("");
   const [department, setDepartment] = useState(departmentItems[0].value);
 
+  /**
+   * validate the form
+   * @param {*} e
+   * @returns
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -62,7 +67,6 @@ const Home = ({ addEmployee }) => {
    * @returns
    */
   const getDateFormat = (date) => {
-    console.log(date);
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
@@ -132,7 +136,6 @@ const Home = ({ addEmployee }) => {
             value={startDate}
             locale="en-EN"
             format="MM/dd/yyyy"
-            required={true}
           />
         </div>
         <div className="form-adress">

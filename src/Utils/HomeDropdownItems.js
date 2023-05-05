@@ -1,3 +1,4 @@
+//dropdown department
 const departments = [
   "Sales",
   "Marketing",
@@ -5,30 +6,11 @@ const departments = [
   "Human Resources",
   "Legal",
 ];
-
 export const departmentItems = departments.map((d) => {
   return { name: d, value: d };
 });
 
-export const numberEntriesItems = [
-  {
-    name: "10",
-    value: 10,
-  },
-  {
-    name: "25",
-    value: 25,
-  },
-  {
-    name: "50",
-    value: 50,
-  },
-  {
-    name: "100",
-    value: 100,
-  },
-];
-
+//dropdown State
 export const stateItems = [
   {
     name: "Alabama",

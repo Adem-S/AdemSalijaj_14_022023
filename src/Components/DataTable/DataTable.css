@@ -1,0 +1,158 @@
+.dataTable {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+} 
+
+.dataTable__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dataTable__nav__content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.dataTable__nav__content input {
+    border-bottom: 1px solid black;
+}
+
+.dataTable__nav__content:first-of-type input {
+   width: 2em;
+   text-align: center;
+}
+
+.nav__search__icon {
+    position: absolute;
+    width: 1em;
+    right: 0;
+    bottom: 0.1em;
+    cursor: pointer;
+}
+
+.hidden {
+    opacity: 0;
+}
+ 
+.overflow-scroll {
+    overflow: scroll;
+}
+
+.dataTable__table {
+    width: 100%;
+    min-width: 1200px;
+    margin: 20px 0;
+}
+
+.dataTable__table__row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.dataTable__list > .dataTable__table__row:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.dataTable__table__item {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    gap: 8px;
+    padding: 0 8px;
+    height: 3em;
+}
+
+.dataTable__table__item--sorted {
+    background-color: rgba(0,0,0,0.04);
+}
+
+.dataTable__filter__btn {
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.dataTable__filter__btn img {
+    width: 1em;
+    height: 1em;
+}
+
+.dataTable__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.dataTable__footer__btn {
+    display: flex;
+    gap: 10px;
+    font-size: 1em;
+}
+
+.dataTable__footer__btn button {
+    font-size: 1em;
+}
+
+.dataTable__footer__btn p {
+    padding: 0 2px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.dataTable__footer__btn p:hover {
+    opacity: 1;
+}
+
+.active-page {
+    border-bottom: 1px solid black;
+    opacity: 1 !important;
+}
+
+.rotate-180deg {
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1024px) {  
+    .dataTable {
+       font-size: 14px;
+       padding: 0 20px;
+    } 
+    .dataTable__table {
+        min-width: 980px;
+     } 
+}
+
+@media screen and (max-width: 768px) {  
+    .dataTable__table {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 500px) {  
+    .dataTable {
+        padding: 0 10px;
+    }
+
+    .dataTable__table {
+        margin: 10px 0;
+    }
+
+    .dataTable__nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .dataTable__footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
