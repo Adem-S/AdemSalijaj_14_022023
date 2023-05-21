@@ -19,6 +19,7 @@ form {
     border-radius: 5px;
     width: 60%;
     height: 35px;
+    font-size: inherit;
 }
 
 div.react-date-picker {
