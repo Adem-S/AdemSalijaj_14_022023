@@ -164,8 +164,10 @@ const DataTable = ({ data, listKeys, numberEntriesItems }) => {
           <p>entries</p>
         </div>
         <div className="dataTable__nav__content">
-          <p>Search :</p>
+          <label htmlFor="filter">Search :</label>
           <input
+            data-testid="filter"
+            id="filter"
             type="text"
             value={searchValue}
             onChange={(e) => handleChangeInput(e.target.value)}
@@ -186,7 +188,7 @@ const DataTable = ({ data, listKeys, numberEntriesItems }) => {
             <tr className="dataTable__table__row">
               {listKeys.map(({ title, value }) => {
                 return (
-                  <td
+                  <th
                     className={"dataTable__table__item dataTable__filter__btn"}
                     key={title}
                     onClick={() => sortData(listFilteredData, value)}
@@ -199,7 +201,7 @@ const DataTable = ({ data, listKeys, numberEntriesItems }) => {
                         alt="arrow"
                       ></img>
                     )}
-                  </td>
+                  </th>
                 );
               })}
             </tr>

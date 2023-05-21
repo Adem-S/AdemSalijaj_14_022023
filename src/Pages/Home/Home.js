@@ -56,7 +56,7 @@ const Home = ({ addEmployee }) => {
       addEmployee(newEmployee);
       resetForm();
     } else {
-      setError("Veuillez renseigner tous les champs");
+      setError("Please fill in all the fields.");
     }
     setOpenModal(true);
   };
@@ -115,6 +115,7 @@ const Home = ({ addEmployee }) => {
         <div className="form-row">
           <label htmlFor="birth">Date of Birth</label>
           <DatePicker
+            data-testid="birth"
             clearIcon={null}
             maxDate={new Date()}
             minDate={new Date("1900-01-01T00:00:00.000Z")}
@@ -128,6 +129,7 @@ const Home = ({ addEmployee }) => {
         <div className="form-row">
           <label htmlFor="startDate">Start Date</label>
           <DatePicker
+            data-testid="startDate"
             clearIcon={null}
             minDate={new Date()}
             maxDate={new Date("2100-01-01T00:00:00.000Z")}
